@@ -293,6 +293,10 @@ p {
     margin: 1rem 0;
 }
 
+#contatos #mensagem {
+    margin-top: 2rem;
+}
+
 #contatos .label-campo {
     position: absolute;
     left: 0;
