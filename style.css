@@ -60,6 +60,10 @@ p {
     color: red;
 }
 
+.brand {
+    width: 18rem;
+}
+
 /* Seção Hero */
 #hero {
     background-image: url(./img/hero-bg.jpg);
@@ -223,118 +227,70 @@ p {
 }
 /* Fim Seção Matérias */
 
-/* Seção Contatos */
-#contatos {
-    width: 100%;
-    height: 100vh;
-    background-color: #272727;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Footer */
+#footer {
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 
-#contatos .contato-wrapper {
-    width: 60%;
-    height: 70vh;
-    display: flex;
-    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
-}
-
-#contatos .contato-esquerdo {
-    width: 35%;
-    background: 
-        linear-gradient(rgba(15, 15, 15, 0.6), rgba(22, 22, 22, 0.9)), 
-        url(./img/contato.jpg);
-    background-size: cover;
-}
-
-#contatos .contato-direito {
-    width: 65%;
-    background-color: #eee;
-    padding: 1rem 3rem 3rem 3rem;
-    display: flex;
+#footer .footer {
+    min-height: 200px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
 }
 
-#contatos .secao-titulo {
-    padding: 20px 0 10px 0;
-    width: 100%;
-    font-size: 3.25vw;
-}
-
-#contatos form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contatos .grupo-input {
-    position: relative;
-}
-
-#contatos .grupo-input textarea {
-   padding-top: 1.5rem;
-   font-family: sans-serif;
-   max-width: 40rem;
-   max-height: 5rem;
-}
-
-#contatos .campo {
-    background: transparent;
-    border: none;
-    width: 20vw;
-    height: 5rem;
-    font-size: 1.45vw;
-    border-bottom: 2px dashed #636363;
-    outline: none;
-    margin: 1rem 0;
-}
-
-#contatos #mensagem {
-    margin-top: 2rem;
-}
-
-#contatos .label-campo {
-    position: absolute;
-    left: 0;
-    top: 2.5rem;
-    color: black;
-    font-size: 1.45vw;
-    font-weight: 400;
-    letter-spacing: .05rem;
-    transition: all 0.3s;
-}
-
-#contatos .campo:focus ~ label {
-    top: 0;
-    font-size: 1.25vw;
-}
-
-#contatos .campo:focus{
-    border-bottom: 1px solid #636363;
-}
-
-#contatos .cta-enviar {
-    padding: 10px;
+#footer h2 {
     color: white;
-    background-color:  red;
-    border: 2px solid red;
-    font-size: 1.5vw;
-    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-top: 10px;
     letter-spacing: .1rem;
-    margin-top: 36px;
-    transition: .3s ease;
-    width: 20vw;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
-#contatos .cta-enviar:hover {
-    opacity: 50%;
+#footer .redes-sociais{
+    display: flex;
+    gap: 31px;
+    margin-bottom: 30px;
 }
 
-/* Fim Seção Contatos */
+#footer .redes-sociais svg{
+    display: flex;
+    height: 30px;
+    width: 30px; 
+    fill: white;
+}
+
+
+#footer .redes-sociais svg #facebook {
+    transition: 0.3s ease;
+}
+
+#footer .redes-sociais svg #facebook:hover {
+    fill: #1B76F2;
+}
+
+#footer .redes-sociais svg #instagram {
+    transition: 0.3s ease;
+}
+
+#footer .redes-sociais svg #instagram:hover {
+    fill: #D62976;
+}
+
+#footer .redes-sociais svg #twitter {
+    transition: 0.3s ease;
+}
+
+#footer .redes-sociais svg #twitter:hover {
+    fill: #1DA1F2;
+}
+
+#footer p {
+    color: white;
+    font-size: 1.15rem;
+}
+/* Fim Footer */
 
 /* Keyframes */
 @keyframes revelacao_caixa_titulo {
