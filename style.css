@@ -11,6 +11,7 @@
 html {
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -64,6 +65,152 @@ p {
     width: 18rem;
 }
 
+/* Header */
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#header .header {
+    min-height: 8vh;
+    background-color: rgba(31, 30, 30, 0.24);
+    transition: .3s ease background-color;
+}
+
+#header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s ease left;
+}
+
+#header .nav-list ul.active {
+    left: 0%;
+}
+
+#header .nav-list ul a {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+    transition: .5s ease;
+
+}
+
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.021);
+    font-size: 13rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
+    color: red;
+}
+
+#header .hamburguer {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+    margin-right: 20px;
+}
+
+#header .hamburguer::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: pulso_hamburguer 1s ease infinite;
+}
+
+#header .hamburguer .bar {
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+
+#header .hamburguer .bar::after,
+#header .hamburguer .bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top, bottom;
+}
+
+#header .hamburguer .bar::after {
+    top: 8px;
+}
+
+#header .hamburguer .bar::before {
+    bottom: 8px;
+}
+
+#header .hamburguer.active .bar::before {
+    bottom: 0;
+}
+
+#header .hamburguer.active .bar::after {
+    top: 0;
+}
+
+/* Fim do Header */
+
 /* Seção Hero */
 #hero {
     background-image: url(./img/hero-bg.jpg);
@@ -93,14 +240,14 @@ p {
     justify-content: flex-start;
 }
 
-#hero h1{
+#hero h1 {
     display: block;
     width: fit-content;
     font-size: 4rem;
     position: relative;
     color: transparent;
     animation: revelacao_titulo .5s ease forwards;
-    animation-delay: 1s ;
+    animation-delay: 1s;
 }
 
 #hero h1:nth-child(1) {
@@ -143,19 +290,20 @@ p {
     display: inline-block;
     padding: 10px;
     color: white;
-    background-color:  transparent;
+    background-color: transparent;
     border: 2px solid red;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
     margin-top: 36px;
-    transition: .3s ease;  
+    transition: .3s ease;
 }
 
 #hero .cta:hover {
     color: white;
     background-color: red;
 }
+
 /* Fim Seção Hero */
 
 /* Seção Matérias */
@@ -196,8 +344,8 @@ p {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-        color: white;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    color: white;
 }
 
 #materias .materia-info h1 {
@@ -210,7 +358,7 @@ p {
     margin-top: 10px;
 }
 
-#materias .materia-info p{
+#materias .materia-info p {
     color: white;
     padding-bottom: 10px;
 }
@@ -225,6 +373,7 @@ p {
     overflow: hidden;
     position: relative;
 }
+
 /* Fim Seção Matérias */
 
 /* Footer */
@@ -248,16 +397,16 @@ p {
     margin-bottom: 25px;
 }
 
-#footer .redes-sociais{
+#footer .redes-sociais {
     display: flex;
     gap: 31px;
     margin-bottom: 30px;
 }
 
-#footer .redes-sociais svg{
+#footer .redes-sociais svg {
     display: flex;
     height: 30px;
-    width: 30px; 
+    width: 30px;
     fill: white;
 }
 
@@ -290,9 +439,22 @@ p {
     color: white;
     font-size: 1.15rem;
 }
+
 /* Fim Footer */
 
 /* Keyframes */
+@keyframes pulso_hamburguer {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
 @keyframes revelacao_caixa_titulo {
     50% {
         width: 100%;
@@ -335,6 +497,7 @@ p {
         font-size: 2.5rem;
         padding: 20px 60px;
     }
+
     /* Fim da Seção Hero */
 
     /* Seção Matérias */
@@ -354,6 +517,16 @@ p {
         border-radius: 0;
     }
 
+    #materias .materia-item:nth-child(1) {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    #materias .materia-item:nth-child(6) {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
     #materias .todas-materias .materia-info {
         height: 100%;
     }
@@ -365,11 +538,48 @@ p {
     #materias .aprender {
         margin-top: 0;
     }
+
     /* Fim da Seção Matérias */
 }
+
 /* Media Query para Tablet */
 
 /* Media Query para Desktop */
+@media only screen and (min-width:1200px) {
+    #header .hamburguer {
+        display: none;
+    }
+
+    #header .nav-list ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+
+    #header .nav-list ul li {
+        display: inline-block;
+    }
+
+    #header .nav-list ul li a {
+        font-size: 1.8rem;
+    }
+
+    #header .nav-list ul a::after {
+        display: none;
+    }
+
+    #hero h1 {
+        left: -0.25%;
+    }
+
+    #hero .cta {
+        position: relative;
+        left: -0.25%;
+    }
+}
+
 @media only screen and (min-width:1300px) {
     #hero h1 {
         left: -8%;
@@ -512,4 +722,5 @@ p {
         left: -101%;
     }
 }
+
 /* Fim Media Query para Desktop */
