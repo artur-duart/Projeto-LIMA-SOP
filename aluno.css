@@ -110,7 +110,7 @@ a+a {
 }
 
 #voltar-pagina {
-    position: fixed;
+    position: fixed;    
     left: 3rem;
     bottom: 3rem;
     width: 3rem;
@@ -124,7 +124,7 @@ a+a {
 }
 
 #voltar-pagina:hover {
-    background-color: transparent;
+    background-color: #9d2525;
     border: 2px solid white;
 }
 
